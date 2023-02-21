@@ -46,7 +46,6 @@ const App = () => {
     await SHRSdk.init(clientId, clientSecret);
     SHRSdk.checkIsLogin().then(async val => {
       const list_doc = await SHRSdk.getAllDocuments();
-      console.log("Quang log", val, list_doc);
       setCheckListDoc(typeof list_doc !== 'string' && list_doc.length > 0);
       setCheckLogin(val);
     });
@@ -67,6 +66,7 @@ const App = () => {
           onVerifyEmailSuccess={()=>{                                                                 //function callback when screen VerifyEmail verify success
             setToast('Verify Email Success');
             setVault(false);
+            setCheckListDoc(true);
             console.log('Verify Email Success');
           }}
         />
@@ -83,9 +83,10 @@ const App = () => {
     return <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
       <SHRSignup
         enableBackButton={true}                                                                     //enable show back buttton
-        copyPhrase={()=>{console.log("Copy Phrase"); setToast('Copy Phrase');}}                                               //function callback when click copy phrase
+        copyPhrase={()=>{console.log("Copy Phrase"); setToast('Copy Phrase');}}                     //function callback when click copy phrase
         onSuccess={(wallet, obj_data)=>{                                                            //function callback when sign up success
           setToast('Sign up onSuccess');
+          setCheckLogin(true);
           console.log("Sign up onSuccess", JSON.stringify({wallet, obj_data}));                    //* wallet is a object, it includes wallet account information
         }}                                                                                          //* obj_data is a object, it include informations to process
         onTermsAndConditions={()=>{console.log("Terms And Conditions");}}                            //function callback when press "Terms And Conditions"
@@ -106,7 +107,7 @@ const App = () => {
     return <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
       <SHRLogin
         isImport={true}
-        // keyPhrase={__DEV__ ? 'gorilla moral salon tube bread avoid garment lunch survey unusual believe fruit' : null}
+        keyPhrase={__DEV__ ? 'gorilla moral salon tube bread avoid garment lunch survey unusual believe fruit' : null}
         enableBackButton={true}                                                                      //enable show back buttton
         copyPhrase={()=>{console.log("Copy Phrase"); setToast('Copy Phrase');}}                                               //function callback when click back button
         onRegisterSuccess={(wallet, obj_data)=>{                                                     //function callback when sign up success
@@ -116,6 +117,7 @@ const App = () => {
         onSuccess={(data)=>{                                                                         //function callback when login success
           setToast('Login Success');
           setLogin(false);
+          setCheckLogin(true);
           console.log("Login Success", JSON.stringify(data));
         }}
         onTermsAndConditions={()=>{console.log("Terms And Conditions");}}                            //function callback when press "Terms And Conditions"
