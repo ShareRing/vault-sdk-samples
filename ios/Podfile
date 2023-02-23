@@ -27,6 +27,7 @@ target 'CleanApp' do
   )
 
   pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
+  pod 'SmartIDModule', :path => '../node_modules/SmartIDModule/ios'
   pod 'SmartIDFramework', :path => '../node_modules/SmartIDModule/SmartIDFramework'
 
   target 'CleanAppTests' do
