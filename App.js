@@ -23,6 +23,8 @@ const App = () => {
   const [isScanQR, setScanQR] = useState(false);
   const [contentQR, setContentQR] = useState('');
   const [isShowDialog, setShowDialog] = useState(false);
+  const [isResultVQL, setShowResultVQL] = useState(false);
+  const [resultVQL, setResultVQL] = useState(null);
   const [isInit, setInit] = useState(false);
   const clientId = 'b273a90e-582d-4252-8a97-e71977c4ee7b';
   const clientSecret = '692a5c43b9952f4d1310129c7497d1ad14e0bd7bc10dda69425fcacf3a1eb3a8';
@@ -187,6 +189,32 @@ const App = () => {
     );
   };
 
+  const renderLoading = () => {
+    return <View style={styles.containerLoading}>
+      <View style={styles.backgroundLoading}>
+        <ActivityIndicator size="large" color="#666666" style={{width: "100%", height: 40}}/>
+      </View>
+    </View>
+  }
+
+  const renderPopupResultVQL = () => {
+    return <View style={styles.containerLoading}>
+      <View style={[styles.backgroundResultVQL, {backgroundColor: resultVQL.query.color}]}>
+        <Text style={styles.txtVQL}>{'Title ' + resultVQL.query.title}</Text>
+        <Text style={styles.txtVQL}>{'' + resultVQL.result}</Text>
+        <TouchableOpacity
+          style={styles.btnCloseVQLResult}
+          onPress={() => {
+            setShowResultVQL(false);
+            setResultVQL(null);
+          }}
+        >
+          <Text style={styles.iconCloseResult}>{'+'}</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  }
+
   const listButton = [
     {name: 'Sign Up', onPress: signUp},
     {name: 'Login', onPress: login},
@@ -215,17 +243,15 @@ const App = () => {
       {isLogin && renderLogin()}
       {isSignUp && renderSignUp()}
       {isScanQR && renderScanQR()}
-      {
-        isLoading && <View style={styles.containerLoading}>
-          <View style={{width: 90, height: 90, borderRadius: 16, backgroundColor: '#FFFFFF', justifyContent: 'center', alignItems: 'center'}}>
-            <ActivityIndicator size="large" color="#666666" style={{width: "100%", height: 40}}/>
-          </View>
-        </View>
-      }
+      {isResultVQL && renderPopupResultVQL()}
+      {isLoading && renderLoading()}
       <SHRSdk.DialogCheckQuery
         showDialog={isShowDialog}
         id={contentQR}
-        onPressOk={(data)=>{console.log("onPressOk data", data);}}
+        onPressOk={(data)=>{
+          setResultVQL(data)
+          setShowResultVQL(true);
+        }}
       />
       <Toast
         isShow={showToast}
@@ -266,6 +292,45 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  backgroundLoading: {
+    width: 90, 
+    height: 90, 
+    borderRadius: 16, 
+    backgroundColor: '#FFFFFF', 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
+  backgroundResultVQL: {
+    width: '90%', 
+    height: '80%', 
+    borderRadius: 16,
+    alignItems: 'center',
+    padding: 20
+  },
+  txtVQL: {
+    color: '#333333', 
+    fontWeight: 'bold', 
+    fontSize: 20,
+    marginTop: 20
+  },
+  btnCloseVQLResult: {
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 10,
+    right: 10
+  },
+  iconCloseResult: {
+    color: '#333333', 
+    height: 25,
+    paddingTop: 8, 
+    fontSize: 40, 
+    fontWeight: '500',
+    lineHeight: 25,
+    transform: [{ rotate: '45deg'}],
+  }
 });
 
 export default App;
