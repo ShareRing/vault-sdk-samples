@@ -6,10 +6,10 @@
  */
 const path = require('path');
 const pak = require('./package.json');
-
 const modules = Object.keys({
   ...pak.peerDependencies,
 });
+
 module.exports = {
   resolver: {
     extraNodeModules: modules.reduce(
@@ -18,13 +18,13 @@ module.exports = {
         return acc;
       },
       {
-        ...require('node-libs-react-native'),
-      },
+        ...require('node-libs-react-native')
+      }
     ),
     resolveRequest: (context, moduleName, platform) => {
       if (moduleName.startsWith('@ethersproject/pbkdf2')) {
         return {
-          filePath: require.resolve('./pdkdf2.js'),
+          filePath: require.resolve('./pbkdf2.js'),
           type: 'sourceFile',
         };
       }
