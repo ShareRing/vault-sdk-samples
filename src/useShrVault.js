@@ -5,7 +5,7 @@ import { Alert } from "react-native";
 
 
 const options = {
-  iosPathGroup: 'group.sharering.network', // ex: 'group.test.vaultdemo'
+  iosPathGroup: '', // ex: 'group.test.vaultdemo'
   primaryColor: '#EF5DA8',
   secondaryColor: '#ffffff',
   headerLogo: require('./assets/SAMPLE_LOGO.png'),
@@ -73,9 +73,18 @@ export default function () {
       if (success) {
         onSuccess && onSuccess();
       } else {
-        console.log('---removeData', error);
+        console.log('---addDocument', error);
       }
     });
+  }
+
+  // getDocuments
+ async function getDocuments() {
+   try {
+     return await SHRSdk.getAllDocuments();
+   }catch (e) {
+     console.error('----getAllDocuments',e)
+   }
   }
 
   //
@@ -108,6 +117,7 @@ export default function () {
 
   //------------>RETURN
   return {
+    getDocuments,
     login,
     signup,
     init,
