@@ -56,7 +56,7 @@
     "rn-fetch-blob": "^0.12.0",
     "shr-nfc-document-reader": "npm:@sharering/shr-nfc-document-reader@^1.0.1",
     "shr-react-native-google-places": "npm:@sharering/shr-react-native-google-places@3.1.2",
-    "shr-vaults": "npm:@sharering/shr-vaults@^1.0.0-alpha5"
+    "shr-vaults": "npm:@sharering/shr-vaults@^1.0.0-alpha6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

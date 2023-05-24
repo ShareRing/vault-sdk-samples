@@ -5,7 +5,7 @@ import JSONTree from 'react-native-json-tree'
 
 
 export default function DemoVaultsPage (){
-  const {init, login, signup, addDocument, getDocuments, getUserInfo} = useShrVault();
+  const {initSuccess, init, login, signup, addDocument, getDocuments, getUserInfo} = useShrVault();
 
   const [dataJson, setDataJson] = useState(null);
   const [isLogged, setIsLogged] = useState(false);
@@ -52,7 +52,6 @@ export default function DemoVaultsPage (){
     const renderHeader=()=>{
       return(
           <>
-              <Text style={{marginBottom: 50, fontSize: 24, fontWeight: 'bold'}}>Client Demo Vaults SDK</Text>
               {/*--login--*/}
               <TouchableOpacity
                   onPress={_onLogin}
@@ -133,7 +132,8 @@ export default function DemoVaultsPage (){
       <SafeAreaView/>
       <ScrollView style={{flex: 1, backgroundColor: '#f1f5f9', padding: 20}}>
         {/*--*/}
-          {renderHeader()}
+          <Text style={{marginBottom: 50, fontSize: 24, fontWeight: 'bold'}}>Client Demo Vaults SDK</Text>
+          {initSuccess && renderHeader()}
           {!!dataJson && <JSONTree  hideRoot data={dataJson}/>}
 
           <View style={{height: 50}}/>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as SHRSdk from 'shr-vaults';
 import { saveShareRingOther } from 'shr-vaults/helpers/common';
 import { Alert } from "react-native";
 
 
 const options = {
-  iosPathGroup: '', // ex: 'group.test.vaultdemo'
+  iosPathGroup: '',
   primaryColor: '#EF5DA8',
   secondaryColor: '#ffffff',
   headerLogo: require('./assets/SAMPLE_LOGO.png'),
@@ -14,12 +14,14 @@ const clientId = 'YOUR_CLIENT_ID';
 const clientSecret = 'YOUR_CLIENT_SECRET';
 
 export default function () {
+  const [initSuccess, setInitSuccess] = useState(false);
 
   // init
   async function init() {
     try {
       const isSuccess = await SHRSdk.init(clientId, clientSecret, options);
       console.log('init', isSuccess);
+      setInitSuccess(isSuccess);
     } catch (e) {
       console.error('init error', e);
     } finally {
@@ -116,6 +118,7 @@ export default function () {
 
   //------------>RETURN
   return {
+    initSuccess,
     getDocuments,
     login,
     signup,
