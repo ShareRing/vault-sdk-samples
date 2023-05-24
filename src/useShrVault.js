@@ -10,9 +10,8 @@ const options = {
   secondaryColor: '#ffffff',
   headerLogo: require('./assets/SAMPLE_LOGO.png'),
 };
-const clientId = 'b273a90e-582d-4252-8a97-e71977c4ee7b';
-const clientSecret = '692a5c43b9952f4d1310129c7497d1ad14e0bd7bc10dda69425fcacf3a1eb3a8';
-const pubKey = '02d7c7e5a5936c533e474f01b3ff18091e89da41af8f70212a535c9f874548872e';
+const clientId = 'YOUR_CLIENT_ID';
+const clientSecret = 'YOUR_CLIENT_SECRET';
 
 export default function () {
 
