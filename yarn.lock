@@ -10630,7 +10630,7 @@ react-native-gesture-handler@^2.10.1, react-native-gesture-handler@^2.9.0:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
-react-native-get-random-values@^1.8.0:
+react-native-get-random-values@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.9.0.tgz#6cb30511c406922e75fe73833dc1812a85bfb37e"
   integrity sha512-+29IR2oxzxNVeaRwCqGZ9ABadzMI8SLTBidrIDXPOkKnm5+kEmLt34QKM4JV+d2usPErvKyS85le0OmGTHnyWQ==
@@ -10746,10 +10746,10 @@ react-native-qrcode-svg@6.2.0:
     prop-types "^15.8.0"
     qrcode "^1.5.1"
 
-"react-native-quick-crypto@npm:@sharering/react-native-quick-crypto@^0.6.3-alpha3":
-  version "0.6.3-alpha3"
-  resolved "https://registry.yarnpkg.com/@sharering/react-native-quick-crypto/-/react-native-quick-crypto-0.6.3-alpha3.tgz#221b3b2a79e33bc5cc048eb85a9ebae4d62b410a"
-  integrity sha512-z/rdbwOgAKhGOR/80tci2y939vh+Inn57Yo7NpoSV8Bv7f1MCQXVBCuLhrOfgT9K/yOxpgN+M3AbnXIMqqG9Qg==
+"react-native-quick-crypto@npm:@sharering/react-native-quick-crypto@^0.6.3-alpha4":
+  version "0.6.3-alpha4"
+  resolved "https://registry.yarnpkg.com/@sharering/react-native-quick-crypto/-/react-native-quick-crypto-0.6.3-alpha4.tgz#701987fd512e2d0d4e78f906ac1641844bd5c599"
+  integrity sha512-B2V1cfDRr4sBBIEx1PQzjQUa9pQ/0qil31xISzt4/l2L+YCeK9FjtlT6u7of0+Oizd8v8ilCdgT0PUrTqghz7w==
   dependencies:
     "@types/node" "^17.0.31"
     crypto-browserify "^3.12.0"
