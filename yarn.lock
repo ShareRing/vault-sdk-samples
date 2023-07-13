@@ -11523,39 +11523,40 @@ shoetest@^1.2.1:
     uuid "^8.3.2"
     validator "^13.5.2"
 
-"shr-login@npm:@sharering/shr-login@^2.0.2-alpha1":
-  version "2.0.2-alpha1"
-  resolved "https://registry.yarnpkg.com/@sharering/shr-login/-/shr-login-2.0.2-alpha1.tgz#3cc18c51eee54362e47c27ffa71731d971e5109f"
-  integrity sha512-1VyVEkWyObbBTaHJpUTuNDZa4ypbGx3f3Dc00C04SZlRcEm0as3xNQd9enQC+RfVp0bMZaYRF3fvOTZixglHUg==
+"shr-login@npm:@sharering/shr-login@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@sharering/shr-login/-/shr-login-2.0.3.tgz#d75874ac3f80ff060c443cba2f3fddab805196b5"
+  integrity sha512-3XMrZwuiTL8TbmjIkRFxhU+sGNN2ziFhbUdyTGysNwObpu3zXvartkPNBVma0b7wAvjMtw8yoX3oo3JRou2JHA==
 
 "shr-nfc-document-reader@npm:@sharering/shr-nfc-document-reader@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@sharering/shr-nfc-document-reader/-/shr-nfc-document-reader-1.0.1.tgz#7ecbb72ef8f5bc902fa57de7bffe4dce18dcdaea"
   integrity sha512-/9YmXQkiJXDBZW0K0BNIVmARWv1FJnc6w5XXTRvXhLdmV9ZsYzimePzaNuN0pyw8+kUJNI7/quG5J2Cn0HBDlA==
 
-"shr-react-native-google-places@npm:@sharering/shr-react-native-google-places@3.1.2":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@sharering/shr-react-native-google-places/-/shr-react-native-google-places-3.1.2.tgz#1a757914acf0439285eacbe4331f16d12499c417"
-  integrity sha512-AKafaGxcB1komQnC0JiceWv9wm751jSVCtQmnt+KJ7UGP/uEz/Xt+SsAZsIrpCePncI5gAV7TNSbKqqPzYFcIw==
-
-"shr-react-native-share@git+ssh://git@bitbucket.org/shareringvietnam/shr-react-native-share.git#master":
-  version "8.2.2"
-  resolved "git+ssh://git@bitbucket.org/shareringvietnam/shr-react-native-share.git#9d6dfe01d11a958eeaf244a0491d2d16c8069f31"
+"shr-react-native-google-places@npm:@sharering/shr-react-native-google-places@3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@sharering/shr-react-native-google-places/-/shr-react-native-google-places-3.1.3.tgz#777776ad5afaa9f24a7e07946fa543b6a916824e"
+  integrity sha512-iz7fOOanmqPqhBb4zxbQJ994wB8EV00+i4vx/sKzAYU++Vnc547u6hMMVrclKKtr4DKcRDsDixSu3l7JHTPR6Q==
 
 "shr-react-native-share@npm:@sharering/shr-react-native-share@^8.2.3":
   version "8.2.3"
   resolved "https://registry.yarnpkg.com/@sharering/shr-react-native-share/-/shr-react-native-share-8.2.3.tgz#919f6032975cdaf1b3ecc612bf1483c3e4cbb099"
   integrity sha512-BbCpajlB3muM1n6attuT7r7dYNTMn5XjUjyqpDaDK5ihk5En4QeBvlivTd3pn7A3xl33sU5eRDuzNOBgHzhfgA==
 
-"shr-signup@npm:@sharering/shr-signup@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@sharering/shr-signup/-/shr-signup-2.0.0.tgz#32387de6fd695df14f6d7c21c0122ca5aced7e40"
-  integrity sha512-02WkrLm0lbk0ASXR5efvG6Qsa+zwR3o88oXrZAj/FmF6S3j2zWpfPtAe/wc7vFb88fb2HGR/hAS8+69aXky5tw==
+"shr-react-native-share@npm:@sharering/shr-react-native-share@^8.2.4":
+  version "8.2.4"
+  resolved "https://registry.yarnpkg.com/@sharering/shr-react-native-share/-/shr-react-native-share-8.2.4.tgz#7304602fb243ff9961e1730367099161f39ac6ef"
+  integrity sha512-8hv2+KcSjPzRat+5RV4n2YEI8dErt+KSHJ9tvpgomvUaBj0H0xZZByQSd+d4OvWbvjh/y7zOM+M9wvJKTxRDDA==
 
-"shr-vaults@npm:@sharering/shr-vaults@^1.0.0-alpha7":
-  version "1.0.0-alpha7"
-  resolved "https://registry.yarnpkg.com/@sharering/shr-vaults/-/shr-vaults-1.0.0-alpha7.tgz#d636a1e254629899d9bcd146603afcfc6782e990"
-  integrity sha512-W8gEYTMmC2vCd6KLHK1Kl0iASNTn3y2dakvTw6yMtNSCnDyMR0c/KH83ZSQG/cfhNEfccygQZcmBATSVxRVoYA==
+"shr-signup@npm:@sharering/shr-signup@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@sharering/shr-signup/-/shr-signup-2.0.1.tgz#688f419f324de451dc233173856ba416a4e2c188"
+  integrity sha512-zmH8yMqMECIRWAMDjiM4eCDy2q9nYp7RVZCMOuLiW++RZYQwTj9hcSxYC6HQpRAgJouFT7+yYiSNOFOcG/UZNg==
+
+"shr-vaults@npm:@sharering/shr-vaults@^1.0.0-alpha9":
+  version "1.0.0-alpha9"
+  resolved "https://registry.yarnpkg.com/@sharering/shr-vaults/-/shr-vaults-1.0.0-alpha9.tgz#9a222f928d77b65a56b9425db279d605cface0d9"
+  integrity sha512-27GCu9rACOcqjNgYryPxHZRYIZrdpPUaPXTzAfTY3gnDMyAk/f4N8VPX52K5+xiJkX4F9eOgRbiAKtIYsgDPdA==
   dependencies:
     "@react-native-google-signin/google-signin" "^9.0.2"
     "@shareledgerjs/hypocorism" "^1.0.0"
@@ -11583,10 +11584,10 @@ shoetest@^1.2.1:
     recyclerlistview "^4.2.0"
     shoetest "^1.2.1"
     shr-document-attestation "npm:@sharering/shr-document-attestation@^1.0.1-alpha1"
-    shr-login "npm:@sharering/shr-login@^2.0.2-alpha1"
+    shr-login "npm:@sharering/shr-login@^2.0.3"
     shr-nfc-document-reader "npm:@sharering/shr-nfc-document-reader@^1.0.1"
     shr-react-native-share "npm:@sharering/shr-react-native-share@^8.2.3"
-    shr-signup "npm:@sharering/shr-signup@^2.0.0"
+    shr-signup "npm:@sharering/shr-signup@^2.0.1"
     shr-vql "npm:@sharering/shr-vql@^1.0.0-alpha1"
     shr-watermarker "npm:@sharering/shr-watermarker@^1.0.0"
     uuid "^9.0.0"
