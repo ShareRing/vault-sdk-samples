@@ -10,21 +10,30 @@ const options = {
   secondaryColor: '#ffffff',
   headerLogo: require('./assets/SAMPLE_LOGO.png'),
 };
-const clientId = 'YOUR_CLIENT_ID';
-const clientSecret = 'YOUR_CLIENT_SECRET';
+const clientId = "791bb781-e29f-4c76-843e-621e2789df41";
+const clientSecret = "cf9e5f55f86d9a9662e114b790d01089e6e81017c96dff83edfd5580f531b2cf";
 
+const HOST ='https://api.testenv.sharetoken.io';
+// const HOST ='https://api.dev.sharetoken.io';
+
+//
 export default function () {
   const [initSuccess, setInitSuccess] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // init
   async function init() {
     try {
-      const isSuccess = await SHRSdk.init(clientId, clientSecret, options);
+      setLoading(true);
+      const isSuccess = await SHRSdk.init(clientId, clientSecret, options, HOST);
       console.log('init', isSuccess);
       setInitSuccess(isSuccess);
+      setLoading(false);
     } catch (e) {
       console.error('init error', e);
+      setLoading(false);
     } finally {
+      setLoading(false);
     }
   }
 
@@ -128,5 +137,6 @@ export default function () {
     updateKycBasicInfo,
     addDocument,
     removeAccount,
+    loading
   };
 }

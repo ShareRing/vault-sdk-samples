@@ -4,7 +4,6 @@
  *
  * @format
  */
-
 import React from 'react';
 import AppNav from "./src/AppNav";
 import {NativeBaseProvider} from 'native-base'

@@ -1,17 +1,19 @@
 import React, {useEffect, useState} from "react";
-import {View, Text, TouchableOpacity, Alert, SafeAreaView, FlatList, ScrollView} from "react-native";
+import {View, Text, TouchableOpacity, Alert, SafeAreaView, ActivityIndicator, ScrollView} from "react-native";
 import useShrVault from "./useShrVault";
 import JSONTree from 'react-native-json-tree'
 
 
 export default function DemoVaultsPage (){
-  const {initSuccess, init, login, signup, addDocument, getDocuments, getUserInfo} = useShrVault();
+  const {loading, initSuccess, init, login, signup, addDocument, getDocuments, getUserInfo} = useShrVault();
 
   const [dataJson, setDataJson] = useState(null);
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(()=>{
-    init();
+    (async()=>{
+     await init();
+    })()
   },[]);
 
   function _onLogin(){
@@ -126,14 +128,32 @@ export default function DemoVaultsPage (){
       )
     }
 
+    const BtnTryAgain =()=>{
+      return(
+          <TouchableOpacity
+          onPress={async()=> await init()}
+          style={{
+              height: 50,
+              width: '100%',
+              backgroundColor: '#696969',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginVertical: 10,
+          }}>
+          <Text>Try Again</Text>
+      </TouchableOpacity>
+      )
+    }
 
   return(
     <>
       <SafeAreaView/>
-      <ScrollView style={{flex: 1, backgroundColor: '#f1f5f9', padding: 20}}>
+      <ScrollView style={{flex: 1, backgroundColor: '#ffffff', padding: 20}}>
         {/*--*/}
-          <Text style={{marginBottom: 50, fontSize: 24, fontWeight: 'bold'}}>Client Demo Vaults SDK</Text>
+          <Text style={{marginBottom: 50, fontSize: 24, fontWeight: 'bold', color: '#333333'}}>Client Demo Vaults SDK</Text>
+          {!initSuccess && !loading && BtnTryAgain()}
           {initSuccess && renderHeader()}
+          {loading && <ActivityIndicator size={'large'} color={'#696969'}/>}
           {!!dataJson && <JSONTree  hideRoot data={dataJson}/>}
 
           <View style={{height: 50}}/>
